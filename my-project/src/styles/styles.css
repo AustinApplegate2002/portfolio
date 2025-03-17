@@ -1,0 +1,590 @@
+/* @import url('../index.css'); */
+
+/* Now you can use the variables */
+body {
+    background: 
+        linear-gradient(to bottom, 
+            rgb(68, 84, 181) 7%,  
+            #f0efef 0% 50%, 
+            #f0efef 88%
+        ),
+        radial-gradient(circle at bottom right, 
+            rgb(27, 35, 88) 20%, 
+            transparent 20%
+        ),
+        radial-gradient(circle at 1% 15%, /* Move the top-left circle lower */
+        rgb(27, 35, 88) 15%,  /* Reduced from 20% to 10% */
+            transparent 0%
+        );
+        background-blend-mode: overlay;
+
+        overflow-x: hidden;  /* Prevent horizontal scrolling */
+        overflow-y: auto; 
+
+        
+}
+
+
+
+.container {
+    font-family: Arial, sans-serif;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    margin: 0 auto; /* Centers horizontally */
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column; /* Ensures vertical stacking */
+    align-items: center; /* Centers content inside if using flex */
+    text-align: center; /* Centers inline text */
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    margin-left: -70px;
+    gap: 20px;
+    font-size: 3rem;
+}
+.icon-link {
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  .icon {
+    display: inline-block;
+    width: 60px;  /* Increased size */
+    height: 60px; /* Increased size */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.icon:hover {
+    transform: scale(1.2); /* Increase size when hovered */
+}
+
+.icon-instagram {
+    background-image: url('path/to/instagram-icon.svg');
+}
+
+.icon-facebook {
+    background-image: url('path/to/facebook-icon.svg');
+}
+
+.icon-github {
+    background-image: url('path/to/github-icon.svg');
+}
+
+  
+  
+
+.header {
+    /* padding: 0; */
+    display: flex;
+    /* margin-left: 30px; */
+    justify-content: space-between;
+    width: 100%;
+    margin-top: -20px;
+}
+
+.profile-pic {
+    height: 300px; /* Adjust as needed */
+    width: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 250px;
+    background-color: rgb(68, 84, 181);
+    padding: 20px;
+    margin-top: 10px;
+    box-shadow: #000000 0px 20px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  }
+  
+  .profile-pic.hover-active {
+    transform: scale(1.2); /* Increase size */
+    box-shadow: #000000 0px 30px 30px; /* Adjust shadow for hover effect */
+  }
+  
+  .profile-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .profile-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-20%, -50%) scale(0);
+    width: 350px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+  }
+  
+  .profile-pic.hover-active + .profile-popup {
+    transform: translate(-14%, -49%) scale(1);
+    opacity: 1;
+  }
+  
+
+.title {
+    flex-grow: 1;
+    text-align: left;
+    font-size: xx-large;
+    margin-top: -20px;
+    background-color: white;
+    max-width: 750px;
+    margin-left: -30px;
+    height: auto;
+    padding-left: 20px;
+    padding-right: 220px;
+    margin-bottom: 100px;
+    border-bottom-right-radius: 100%;  
+}
+
+
+.personal_title {
+    text-align: right;
+    margin-left: auto;
+    font-size: xx-large;
+    background-color: white;
+    margin-right: -30px;
+    margin-top: -10px;
+    padding-right: 20px;
+    padding-left: 400px;
+    margin-bottom: 100px;
+    border-bottom-left-radius: 100%;  
+    line-height: 20px;
+}
+
+
+
+
+.specialties-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Experience Section */
+.experience {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* New about-me-container and pic */
+.about-me-container {
+    position: relative;
+    display: inline-block;
+    width: 1100px;
+    height: 1100px;
+    margin-left: -200px;
+    margin-top: -200px;
+}
+
+.about-me-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    object-fit: cover;
+    transition: transform 0.5s, border-radius 0.5s, opacity 0.5s; /* Added opacity transition */
+    position: relative;
+    overflow: hidden; /* Ensures the text doesn't overflow the circle */
+}
+
+/* Flip the image on hover */
+.about-me-pic:hover {
+    transform: rotateY(180deg);
+    opacity: 0.02;
+}
+
+/* The text that appears when the image is hovered */
+.hello-text {
+    position: absolute;
+    top: 73%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -55%);
+    color: rgb(0, 0, 0); /* Adjust based on your image */
+    font-size: 2rem; /* Adjust size as needed */
+    font-weight: bold;
+    text-align: left;
+    font-size: 2.3rem;
+    line-height: 60px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 80px;
+    padding-top: 100px;
+    padding-bottom: 125px;
+    box-shadow: #000000 0px 10px 10px;
+}
+
+/* When hovered, display the text */
+.about-me-pic:hover .hello-text {
+    visibility: visible;
+    opacity: 1; /* Make the text visible with a smooth fade-in effect */
+}
+
+.projects {
+    width: 50%; /* This ensures the projects section takes up 50% of the page */
+}
+
+.projects-title {
+    font-size: 5rem;
+    text-align: center;
+    margin-right: -110px;
+}
+
+.about-me-title {
+    font-size: 5rem;
+    text-align: center;
+    margin-right: 10px;
+}
+
+  
+  .half-letter {
+    position: relative;
+    display: inline-block;
+    color: black;
+  }
+  
+  .half-letter::before {
+    content: "b";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: black;
+    white-space: nowrap;
+  }
+  
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    column-gap: 65px; /* Small space between the columns */
+    row-gap: 30px; /* No gap between rows */
+    width: 80%;
+    margin-left: 14%; /* Move the grid to the right */
+    padding: 0;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    column-gap: 65px; /* Small space between the columns */
+    row-gap: 30px; /* No gap between rows */
+    width: 80%;
+    margin-left: 14%; /* Move the grid to the right */
+    padding: 0;
+}
+
+.project-card {
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ddd;
+    font-size: xx-large;
+    padding: 20px;
+    border-radius: 20px;
+    height: 400px; /* Keep this as is or adjust */
+    margin-right: -100px; /* Ensure no extra margin around cards */
+    width: 100%; /* Ensure cards stretch to fill the available space */
+    box-shadow: #000000 0px 2px 2px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card .image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7; /* Adjust opacity to make the image less dominant */
+    transition: opacity 0.3s ease;
+}
+
+.project-card h3 {
+    margin: 0;
+    font-size: xxx-large;
+    position: relative;
+    z-index: 1; /* Makes sure the title is above the image */
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Move the card up slightly */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2); /* Add more shadow on hover */
+}
+
+.project-card:hover .image {
+    opacity: 1; /* Make the image fully visible on hover */
+}
+
+.project-card:hover h3 {
+    color: rgb(0, 0, 0); /* Change the text color to white on hover */
+}
+
+
+
+/* Timeline Section */
+.timeline-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.timeline {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+.timeline-section {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Timeline Title Container and Title */
+.timeline-title-container {
+    display: flex;
+    padding-top: 50px;
+    align-items: center;
+    justify-content: end;
+    margin-left: -100px;
+    max-width: 83%;
+    margin-top: -100px;
+}
+
+.timeline-controls {
+    display: flex;
+    /* justify-content: center; */
+    gap: 20px;
+    align-items: center;
+    margin-right: -410px; /* Adjust space between buttons and title */
+    margin-top: 10px;
+}
+
+.timeline-controls button {
+    background-color: transparent; /* Blue color */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 5px 30px; /* Increased padding for bigger buttons */
+    cursor: pointer;
+    border-radius: 100px;
+    margin-top: -70px;
+    font-size: 4rem; /* Larger font size */
+    /* margin: 0 100px; */
+}
+
+.timeline-controls button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+
+}
+
+.timeline-title {
+    font-size: 5rem;
+    margin: 0 5px;
+    margin-right: -20px;
+    margin-top: -60px;
+    padding-right: 30px;
+}
+
+.timeline-bar {
+    display: flex;
+    justify-content: space-evenly; /* Evenly distribute ticks */
+    align-items: center;
+    position: absolute;
+    right: 100px; /* Align to the right */
+    height: 40px;
+    width: 40%; /* Set width to half of the page */
+}
+
+
+.tick-container {
+    display: flex;
+    align-items: center;
+    border-top: 2px solid black;
+    width: 100%; /* The timeline bar width */
+    margin: 0 auto; /* Center the tick container */
+    position: relative;
+    justify-content: space-evenly; /* Ensure equal spacing for the ticks */
+}
+
+/* General styles for ticks */
+.tick {
+    width: 2px;
+    height: 15px;
+    background-color: black;
+    position: relative;
+    margin: -15px 0; /* Center ticks along the line */
+}
+
+/* The first tick */
+.tick:nth-child(1) {
+    height: 25px; /* Adjust the length as needed */
+}
+
+/* Every 5th, 10th, 15th, etc. tick will have a larger height */
+.tick:nth-child(5n) {
+    height: 25px; /* Adjust the length as needed */
+}
+
+.timeline-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1170px) {
+
+    .about-me-pic {
+        width: 70%;
+        height: 70%;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: transform 0.5s, border-radius 0.5s, opacity 0.5s; /* Added opacity transition */
+        position: relative;
+        overflow: hidden; /* Ensures the text doesn't overflow the circle */
+    }
+    
+
+    /* Stack experience sections vertically */
+    .experience {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-container, .projects {
+        width: 100%; /* Make sections take full width */
+        margin-bottom: 20px; /* Space between sections */
+    }
+}
+
+/* For tablets (portrait) and below */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .profile-pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .project-list {
+        justify-content: center;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+
+    /* Stack experience sections vertically */
+    .experience {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-container, .projects {
+        width: 100%; /* Make sections take full width */
+        margin-bottom: 20px; /* Space between sections */
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    .project-list {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    /* Stack experience sections vertically */
+    .experience {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-container, .projects {
+        width: 100%; /* Ensure both sections take full width */
+        margin-bottom: 15px; /* Space between sections */
+    }
+}
+
+/* For smaller devices like iPod */
+@media (max-width: 320px) {
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-list {
+        padding: 10px;
+    }
+
+    .project-card {
+        padding: 10px;
+    }
+
+    /* Stack experience sections vertically */
+    .experience {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-container, .projects {
+        width: 100%; /* Ensure both sections take full width */
+        margin-bottom: 10px; /* Space between sections */
+    }
+}

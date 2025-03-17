@@ -1,0 +1,48 @@
+.specialties-container {
+    display: flex;
+    justify-content: center; /* Center the content, if desired */
+    padding: 20px;
+    width: 100%;
+    padding-top: 100px;
+}
+
+.skills-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.skills-container {
+    display: grid;
+    width: 100%; /* Make sure the grid takes full width */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 5px;
+}
+
+.skill-item {
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 3rem;
+    /* Optional: Add a background color to visualize the grid cells */
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .skill-item {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    .skill-item {
+        font-size: 1.5rem;
+    }
+}
