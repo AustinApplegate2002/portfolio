@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "../styles/styles.css";
-import Headshot from "../assets/Headshot.jpg";
+// import Headshot from "../assets/Headshot.jpg";
+import professional from "../assets/professional.jpeg";
 
 import platonicShapes from "../assets/platonic_shapes.jpg";
-// import background2 from "../assets/background2.jpg";
-// import background3 from "../assets/background3.jpg";
-// import background4 from "../assets/background4.jpg";
+import volume from "../assets/volume.jpg";
+import dice from "../assets/dice.jpg";
+import God from "../assets/God.jpg";
 // import background5 from "../assets/background5.jpg";
 
 const backgroundImages = [
     platonicShapes,
-    
+    volume,
+    dice,
+    God
 ];
 
 const Projects = ({ index }: { index: number }) => {
-  const [titlePart] = useState({
+  const [titlePart, setTitlePart] = useState({
     firstPart: "Ab",
     secondPart: "out Me",
     
@@ -105,6 +108,48 @@ const Projects = ({ index }: { index: number }) => {
   ];
 
   useEffect(() => {
+    const handleResize = () => {
+      // Adjust title based on window width
+      if (window.innerWidth < 2000) {
+        setTitlePart({
+          firstPart: "",
+          secondPart: "About Me",
+        });
+      } else if (window.innerWidth < 2170){
+        setTitlePart({
+          firstPart: "About",
+          secondPart: " Me",
+        });
+      } else if (window.innerWidth < 2190) {
+        setTitlePart({
+          firstPart: "Abou",
+          secondPart: "t Me",
+        });
+      } else if (window.innerWidth < 2500){
+        setTitlePart({
+          firstPart: "Abo",
+          secondPart: "ut Me",
+        });
+      }
+      else {
+        setTitlePart({
+          firstPart: "Ab",
+          secondPart: "out Me",
+        });
+      }
+    };
+
+    // Set initial title based on window size
+    handleResize();
+    
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       const title = document.getElementById("about-me-title");
       if (title) {
@@ -116,6 +161,8 @@ const Projects = ({ index }: { index: number }) => {
         }
       }
     };
+
+    
 
     window.addEventListener("scroll", handleScroll);
 
@@ -129,8 +176,8 @@ const Projects = ({ index }: { index: number }) => {
       <section className="projects">
         <div className="about-me-container">
           <h2 id="about-me-title" className="about-me-title">
-            <span style={{ color: "#f0efef" }}>{titlePart.firstPart}</span>
-            <span style={{ color: "black" }}>{titlePart.secondPart}</span>
+            <span className="first-part" style={{ color: "#f0efef" }}>{titlePart.firstPart}</span>
+            <span className="second-part" style={{ color: "black" }}>{titlePart.secondPart}</span>
             
           </h2>
           <h2 className="hello-text">
@@ -146,10 +193,11 @@ const Projects = ({ index }: { index: number }) => {
             eager to combine my technical expertise and creative mindset to
             innovate and deliver impactful software solutions.
           </h2>
-          <img src={Headshot} alt="Profile" className="about-me-pic" />
+          <img src={professional} alt="Profile" className="about-me-pic" />
         </div>
       </section>
       <section className="projects">
+        
         <h2 className="projects-title">Projects</h2>
         <div className="project-list">
           {projects[index].map((project, i) => (

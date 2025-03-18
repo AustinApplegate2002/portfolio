@@ -2,20 +2,27 @@
 
 /* Now you can use the variables */
 body {
+    margin-top: -20px;
     background: 
         linear-gradient(to bottom, 
-            rgb(68, 84, 181) 7%,  
+            rgb(68, 84, 181) 6%,  
             #f0efef 0% 50%, 
             #f0efef 88%
         ),
-        radial-gradient(circle at bottom right, 
-            rgb(27, 35, 88) 20%, 
+        radial-gradient(circle at 89% 103%, 
+            rgb(27, 35, 88) 0% 20%, 
             transparent 20%
+            
         ),
-        radial-gradient(circle at 1% 15%, /* Move the top-left circle lower */
+        radial-gradient(circle at -5% 5%, /* Move the top-left circle lower */
         rgb(27, 35, 88) 15%,  /* Reduced from 20% to 10% */
             transparent 0%
-        );
+        ),
+        radial-gradient(circle at 50% 55%, /* Move the top-left circle lower */
+        rgb(27, 35, 88) 25%,  /* Reduced from 20% to 10% */
+            transparent 0%
+        )
+        ;
         background-blend-mode: overlay;
 
         overflow-x: hidden;  /* Prevent horizontal scrolling */
@@ -89,7 +96,7 @@ body {
     /* margin-left: 30px; */
     justify-content: space-between;
     width: 100%;
-    margin-top: -20px;
+    padding-top: 20px;
 }
 
 .profile-pic {
@@ -97,7 +104,7 @@ body {
     width: 300px;
     border-radius: 50%;
     object-fit: cover;
-    margin-left: 250px;
+    margin-left: 150px;
     background-color: rgb(68, 84, 181);
     padding: 20px;
     margin-top: 10px;
@@ -142,14 +149,14 @@ body {
 .title {
     flex-grow: 1;
     text-align: left;
-    font-size: xx-large;
-    margin-top: -20px;
+    font-size: xxx-large;
+    margin-top: -80px;
     background-color: white;
     max-width: 750px;
     margin-left: -30px;
     height: auto;
     padding-left: 20px;
-    padding-right: 220px;
+    padding-right: 320px;
     margin-bottom: 100px;
     border-bottom-right-radius: 100%;  
 }
@@ -161,7 +168,7 @@ body {
     font-size: xx-large;
     background-color: white;
     margin-right: -30px;
-    margin-top: -10px;
+    margin-top: -30px;
     padding-right: 20px;
     padding-left: 400px;
     margin-bottom: 100px;
@@ -169,15 +176,6 @@ body {
     line-height: 20px;
 }
 
-
-
-
-.specialties-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-}
 
 /* Experience Section */
 .experience {
@@ -464,6 +462,194 @@ body {
 
 
 /* Responsive Design */
+@media (max-width: 2500px) {
+    .personal_title{
+        font-size: xx-large;
+        line-height: 4rem;
+    }
+    .profile-pic{
+        margin-left: 10px;
+    }
+    .about-me-pic{
+        width: 80%;
+        height: 80%;
+    }
+    .hello-text{
+        top: 62%;
+        left: 50%;
+        width: 72%;
+        font-size: 1.75rem; /* Adjust size as needed */
+        font-weight: bold;
+        text-align: left;
+        line-height: 60px;
+        padding: 40px;
+        border-radius: 80px;
+        padding-top: 35px;
+        padding-bottom: 40px;
+    }
+
+    body {
+        background: 
+            linear-gradient(to bottom, 
+                rgb(68, 84, 181) 6%,  
+                #f0efef 0% 50%, 
+                #f0efef 88%
+            ),
+            radial-gradient(circle at 89% 103%, 
+                rgb(27, 35, 88) 14.15%, /* Adjusted size for smaller screens */
+                transparent 0%
+            ),
+            radial-gradient(circle at -5% 5%, 
+                rgb(27, 35, 88) 14.5%,  /* Reduced size for smaller screens */
+                transparent 0%
+            ),
+            radial-gradient(circle at 50% 55%, 
+                rgb(27, 35, 88) 19%,  /* Reduced size for smaller screens */
+                transparent 0%
+            );
+    }
+}
+
+@media (max-width: 2274px) {
+    .project-card {
+        font-size: x-large;
+        justify-content: flex-start; 
+        padding-bottom: 0px;
+        height: 330px;
+    }
+
+    .project-card h3{
+        font-size: xx-large;
+    }
+
+    
+}
+
+@media (max-width: 2190px){
+    body {
+        background: 
+            linear-gradient(to bottom, 
+                rgb(68, 84, 181) 6%,  
+                #f0efef 0% 50%, 
+                #f0efef 88%
+            ),
+            radial-gradient(circle at 90% 102%, 
+                rgb(27, 35, 88) 15%, /* Adjusted size for smaller screens */
+                transparent 0%
+            ),
+            radial-gradient(circle at -5% 5%, 
+                rgb(27, 35, 88) 14.5%,  /* Reduced size for smaller screens */
+                transparent 0%
+            ),
+            radial-gradient(circle at 52% 55%, 
+                rgb(27, 35, 88) 15%,  /* Reduced size for smaller screens */
+                transparent 0%
+            );
+    }
+    .about-me-pic{
+        width: 75%;
+        height: 75%;
+    }
+    .hello-text{
+        top: 60%;
+        left: 50%;
+        width: 65%;
+        font-size: 1.5rem; /* Adjust size as needed */
+        font-weight: bold;
+        text-align: left;
+        line-height: 60px;
+        padding: 40px;
+        border-radius: 80px;
+        padding-top: 35px;
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 2000px) {
+    .experience {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center horizontally */
+        justify-content: center; /* Center vertically */
+        padding: 0px;
+    }
+
+    .about-me-container {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: -90px;
+        margin-top: -140px;
+    }
+    .about-me-pic{
+        width: 70%;
+        height: 70%;
+    }
+    .hello-text{
+        top: 60%;
+        justify-content: center;
+        left: 550px;
+        width: 59%;
+        font-size: 1.4rem; /* Adjust size as needed */
+        font-weight: bold;
+        text-align: left;
+        line-height: 50px;
+       
+        border-radius: 80px;
+        padding-top: 35px;
+        padding-bottom: 40px;
+    }
+    .about-me-title {
+        font-size: 2rem;
+        text-align: center;
+        margin-right: 20px;
+    }
+   
+    body {
+        background: 
+            linear-gradient(to bottom, 
+                rgb(68, 84, 181) 3%,  
+                #f0efef 0% 50%, 
+                #f0efef 88%
+            ),
+            radial-gradient(circle at 91.5% 101.5%, 
+                rgb(27, 35, 88) 11%, /* Adjusted size for smaller screens */
+                transparent 0%
+            ),
+            radial-gradient(circle at -5% 5%, 
+                rgb(27, 35, 88) 14.5%,  /* Reduced size for smaller screens */
+                transparent 0%
+            ),
+            radial-gradient(circle at 51% 68.5%, 
+                rgb(27, 35, 88) 9.8%,  /* Reduced size for smaller screens */
+                transparent 0%
+            );
+    }
+    .title{
+        font-size: xx-large;
+        padding-top: 30px;
+        max-width: 700px;
+        margin-left: -30px;
+        height: auto;
+        padding-left: 20px;
+        padding-right: 420px;
+        margin-bottom: 80px;
+    }
+    .personal_title{
+        font-size: x-large;
+        line-height: 3rem;
+        width: 100%;
+    }
+    .projects-title{
+        margin-left: -100px;
+    }
+    .project-list{
+        margin-left: 70px;
+    }
+}
+
+
 @media (max-width: 1170px) {
 
     .about-me-pic {
@@ -490,14 +676,85 @@ body {
 }
 
 /* For tablets (portrait) and below */
-@media (max-width: 768px) {
+@media (max-width: 690px) {
     .container {
         padding: 15px;
     }
 
-    .profile-pic {
-        width: 200px;
-        height: 200px;
+    body {
+        background: 
+            linear-gradient(to bottom, 
+                rgb(68, 84, 181) 1.7%,  
+                #f0efef 0% 50%, 
+                #f0efef 88%
+            ),
+            radial-gradient(circle at 91.5% 101.5%, 
+                rgb(27, 35, 88) 0%, /* Adjusted size for smaller screens */
+                transparent 0%
+            ),
+            radial-gradient(circle at -5% 1%, 
+                rgb(27, 35, 88) 0%,  /* Reduced size for smaller screens */
+                transparent 0%
+            ),
+            radial-gradient(circle at 51% 68.5%, 
+                rgb(27, 35, 88) 0%,  /* Reduced size for smaller screens */
+                transparent 0%
+            );
+    }
+
+    .header{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title{
+        font-size: 1rem;
+        padding-top: 20px;
+        width: 100%;
+
+    }
+
+    .profile-pic{
+        margin-top: -20px;
+        
+    }
+
+    .hello-text{
+        top: 45%;
+        justify-content: center;
+        left: 410px;
+        width: 84%;
+        font-size: 1.2rem; /* Adjust size as needed */
+        font-weight: bold;
+        text-align: left;
+        line-height: 47px;
+       
+        border-radius: 80px;
+        padding-top: 35px;
+        padding-bottom: 40px;
+    }
+
+    .personal_title{
+        margin-top: 30px;
+        text-align: center;
+        font-size: x-large;
+         background-color: white;
+         margin-right: 0px;
+         padding-right: 40px;
+         padding-left: 20px;
+         padding-bottom: 20px;
+        margin-left: -20px;
+         border-bottom-left-radius: 0%;  
+         line-height: 20px;
+    }
+
+    .about-me-pic {
+        width: 98%;
+        height: 70%;
+        border-radius: 12%;
+        margin-right: -178px;
+        margin-top: -270px;
     }
 
     .project-list {
@@ -518,6 +775,60 @@ body {
         width: 100%; /* Make sections take full width */
         margin-bottom: 20px; /* Space between sections */
     }
+
+    .projects-title{
+        margin-left: -100px;
+        margin-top: -160px;
+    }
+
+    .project-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* Two columns */
+        column-gap: 65px; /* Small space between the columns */
+        row-gap: 30px; /* No gap between rows */
+        width: 80%;
+        margin-left: 7%; /* Move the grid to the right */
+        padding: 0;
+    }
+    
+    .project-card {
+        background-size: cover;
+        background-position: center;
+        border: 1px solid #ddd;
+        font-size: xx-large;
+        padding: 20px;
+        border-radius: 20px;
+        height: 400px; /* Keep this as is or adjust */
+        margin-right: -100px; /* Ensure no extra margin around cards */
+        width: 100%; /* Ensure cards stretch to fill the available space */
+        box-shadow: #000000 0px 2px 2px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-title-container {
+        margin-top: 50px;
+        margin-left: -350px;
+    }
+    .timeline-title{
+        font-size: xx-large;
+    }
+
+    .timeline-bar {
+        display: flex;
+        justify-content: space-evenly; /* Evenly distribute ticks */
+        align-items: center;
+        position: absolute;
+        left: 80px;
+        height: 40px;
+        width: 80%; /* Set width to half of the page */
+    }
+    
 }
 
 /* For mobile phones */
